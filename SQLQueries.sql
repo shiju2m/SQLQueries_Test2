@@ -30,7 +30,7 @@ VALUES (1001,'Ricky Ponting','1974-12-19','Australia'),
 (1020,'Wasim Akram','1966-06-03','Pakistan')
 ;
 --Selecting the duplicate records
---Select PersonId,Name,DOB,Nationality,Count(*) from PERSON group by Name,DOB,Nationality having count(*)>1;
+Select PersonId,Name,DOB,Nationality,Count(*) from PERSON group by Name,DOB,Nationality having count(*)>1;
 --Deleting the duplicate records
 Delete from PERSON where PersonId not in (Select max(PersonId) from PERSON group by Name,DOB,Nationality); 
 -- Just looking for duplicates are removed by this select statement
